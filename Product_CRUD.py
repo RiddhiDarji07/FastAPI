@@ -64,22 +64,22 @@ def get_product(productid: int, response: Response):
         response.status_code = 500
         return{'isSuccess' : False, 'message' : str(e)}
 
-# Delete Product
-@app.delete('/deleteproduct/{productid}')
-def delete_product(productid: int, response: Response):
-    try:
-        response.status_code = 200
-        for product in products:
-            if product.id == productid:
-                products.remove(product)
-                return {'isSuccess': True, 'message': 'Product Deleted Successfully', 'product': product}
-        response.status_code = 404
-        return {'isSuccess':False, 'message' : 'Product not found'}
+# # Delete Product
+# @app.delete('/deleteproduct/{productid}')
+# def delete_product(productid: int, response: Response):
+#     try:
+#         response.status_code = 200
+#         for product in products:
+#             if product.id == productid:
+#                 products.remove(product)
+#                 return {'isSuccess': True, 'message': 'Product Deleted Successfully', 'product': product}
+#         response.status_code = 404
+#         return {'isSuccess':False, 'message' : 'Product not found'}
     
-    except Exception as e:
-        response.status_code = 500
+#     except Exception as e:
+#         response.status_code = 500
 
-        return {'isSuccess': False, 'message': str(e)}
+#         return {'isSuccess': False, 'message': str(e)}
 
 # Update Product
 @app.put('/updateproduct/{productid}')

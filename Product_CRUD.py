@@ -10,6 +10,7 @@ from typing import Optional
 app = FastAPI()
 # app.include_router(ProductRouter)
 
+# Codes
 # 200 - Ok
 # 201 - Created
 # 400 - Bad Request
